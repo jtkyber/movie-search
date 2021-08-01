@@ -1,10 +1,36 @@
-import { useStoreActions } from 'easy-peasy';
+import { useState, useEffect } from 'react';
+import { useStoreState, useStoreActions } from 'easy-peasy';
 import { Modal, Button } from 'react-bootstrap';
 import './MoreInfo.css';
 
 const MoreInfo = (props) => {
   const m = props.movie;
-  const addToFavorites = useStoreActions(actions => actions.addToFavorites);
+  const favorites = useStoreState(state => state.stored.favorites);
+  const {addToFavorites, removeFromFavorites} = useStoreActions(actions => ({
+    addToFavorites: actions.addToFavorites,
+    removeFromFavorites: actions.removeFromFavorites
+  }));
+  const [isFavorite, setIsFavorite] = useState(false);
+
+  useEffect(() => {
+    for (let movie in favorites) {
+      console.log('fav id: ' + movie.imdbID + ' | cur id: ' + m.imdbID);
+      if (movie.imdbID === m.imdbID) {
+        return setIsFavorite(true);
+      }
+    }
+    return setIsFavorite(false);
+  }, [])
+
+  const updateFavorites = () => {
+    if(!isFavorite) {
+      addToFavorites({poster: m.Poster, title: m.Title, type: m.Type, year: m.Year, imdbID: m.imdbID})
+      setIsFavorite(true);
+    } else {
+      removeFromFavorites(m.imdbID);
+      setIsFavorite(false);
+    }
+  }
 
   return (
       <Modal
@@ -59,11 +85,12 @@ const MoreInfo = (props) => {
             </div>
           </Modal.Body>
           <Modal.Footer>
-            <Button variant="success"
-              onClick={() =>
-                addToFavorites({poster: m.Poster, title: m.Title, type: m.Type, year: m.Year, imdbID: m.imdbID})
-              }
-              className='modalFavorite'>Add to Favorites</Button>
+            <Button
+              variant={!isFavorite ? "success" :  "danger"}
+              onClick={updateFavorites}
+              className={!isFavorite ? "addfavoriteBtn" :  "removefavoriteBtn"}>
+              {!isFavorite ? 'Add to Favorites' :  "Remove from Favorites"}
+              </Button>
             <Button variant="secondary" onClick={props.onHide}>Close</Button>
           </Modal.Footer>
         </div>

@@ -7,7 +7,6 @@ import './App.css';
 
 function App() {
   const cardView = useStoreState(state => state.stored.cardView);
-  // const favorites = useStoreState(state => state.stored.favorites);
   const setMovieResults = useStoreActions(actions => actions.setMovieResults);
   const [currentSearch, setCurrentSearch] = useState('');
 

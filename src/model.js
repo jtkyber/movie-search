@@ -51,6 +51,15 @@ const model = {
             )
         }
     }),
+
+    removeFromFavorites: action((state, id) => {
+        const favs = state.stored.favorites;
+        for (let i = 0; i < favs.length; i++) {
+            if (favs[i].imdbID === id) {
+                favs.splice(i, 1);
+            }
+        }
+    }),
 }
 
 export default model;
