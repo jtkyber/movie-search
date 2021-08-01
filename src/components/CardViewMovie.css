@@ -1,0 +1,71 @@
+.cardContainer {
+    width: 85vw;
+    position: absolute;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(auto, 20rem));
+    justify-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding-bottom: 3rem;
+}
+
+.cardViewBlock {
+    position: relative;
+    width: 22rem;
+    height: 13rem;
+    border: solid 4px rgba(0, 0, 0, 0.5);
+    border-radius: 1rem;
+    display: grid;
+    grid-template-columns: 0.4fr 0.6fr;
+    grid-template-rows: 0.5fr 0.3fr 0.2fr;
+    grid-template-areas:
+    "cardPoster cardTitle"
+    "cardPoster cardType"
+    "cardPoster cardYear";
+    padding:  0.5rem;
+    overflow: hidden;
+    box-shadow: 8px 8px 20px 1px rgba(0, 0, 0, 0.5);
+    transition: 0.3s;
+    cursor: pointer;
+    justify-items: center;
+    align-items: center;
+}
+.cardViewBlock:hover {
+    transform: scale(1.05);
+}
+
+.cardPoster {
+    position: absolute;
+    grid-area: cardPoster;
+    height: 90%;
+    width: auto;
+    border: solid 1px black;
+    margin-bottom: 0.5rem;
+}
+.cardPoster img {
+    height: 100%;
+    width: auto;
+}
+
+.cardTitle {
+    position: absolute;
+    grid-area: cardTitle;
+    text-align: center;
+    align-self: end;
+}
+
+.cardType {
+    position: absolute;
+    grid-area: cardType;
+    height: 2rem;
+    color: grey;
+    align-self: end;
+}
+
+.cardYear {
+    position: absolute;
+    grid-area: cardYear;
+    height: 1rem;
+    color: grey;
+    align-self: start;
+}

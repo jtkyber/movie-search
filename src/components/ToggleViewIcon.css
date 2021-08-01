@@ -1,0 +1,44 @@
+.cardViewIcon {
+    width: 1.4rem;
+    height: 1.4rem;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap:  0.15rem;
+    transition: 0.1s;
+    cursor: pointer;
+}
+.cardViewIcon:hover {
+    opacity: 0.5;
+    width: 1.6rem;
+    height: 1.6rem;
+}
+
+.block {
+    border: solid 1px black;
+}
+
+.listViewIcon {
+    width: 1.5rem;
+    height: 1rem;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 4fr;
+    gap: 0.15rem;
+    cursor: pointer;
+    transition: 0.1s;
+}
+.listViewIcon:hover {
+    opacity: 0.5;
+    width: 1.7rem;
+    height: 1.1rem;
+}
+
+.dot {
+    border: solid 1px black;
+}
+
+.line {
+    border: solid 1px black;
+}
+

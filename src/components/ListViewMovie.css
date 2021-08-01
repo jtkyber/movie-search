@@ -1,0 +1,38 @@
+.listContainer {
+    position: absolute;
+    padding-bottom: 3rem;
+}
+
+.listViewBlock {
+    display: grid;
+    width:  85vw;
+    grid-template-columns: .1fr .6fr .1fr .2fr;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+    align-items: center;
+    border: 2px solid black;
+    padding: 0.5rem 1rem;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.listViewBlock:hover {
+    transform: scale(1.05);
+}
+
+.listPoster img {
+    width: 3rem;
+    height: auto;
+}
+
+.listTitle {
+
+}
+
+.listType {
+    color:  grey;
+}
+
+.listYear {
+    justify-self: end;
+    color:  grey;
+}

@@ -1,14 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { StoreProvider, createStore, persist } from 'easy-peasy';
+import model from './model';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+const store = createStore(persist(model, {
+    storage: 'localStorage',
+}));
+
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+    <StoreProvider store={store}>
+        <App />
+    </StoreProvider>,
+    document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function
