@@ -14,6 +14,7 @@ const model = {
     ),
 
     movieResults: [],
+    selectedMovie: {},
 
 
 
@@ -25,7 +26,31 @@ const model = {
 
     setMovieResults: action((state, mList) => {
         state.movieResults = mList;
-    })
+    }),
+
+    setSelectedMovie: action((state, movie) => {
+        state.selectedMovie = movie;
+    }),
+
+    addToFavorites: action((state, data) => {
+        let movieFound = false;
+        for (let m of state.stored.favorites) {
+            if (m.imdbID === data.imdbID) {
+                movieFound = true;
+            }
+        }
+        if (!movieFound) {
+            state.stored.favorites.push(
+                {
+                    Poster: data.poster,
+                    Title: data.title,
+                    Type: data.type,
+                    Year: data.year,
+                    imdbID: data.imdbID
+                }
+            )
+        }
+    }),
 }
 
 export default model;

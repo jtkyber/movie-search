@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useStoreState, useStoreActions } from 'easy-peasy';
 import MovieList from './components/MovieList';
 import ToggleViewIcon from './components/ToggleViewIcon';
@@ -7,8 +7,13 @@ import './App.css';
 
 function App() {
   const cardView = useStoreState(state => state.stored.cardView);
+  // const favorites = useStoreState(state => state.stored.favorites);
   const setMovieResults = useStoreActions(actions => actions.setMovieResults);
   const [currentSearch, setCurrentSearch] = useState('');
+
+  useEffect(() => {
+
+  }, [])
 
   const findMovies = async () => {
     setCurrentSearch('');
