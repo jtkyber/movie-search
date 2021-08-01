@@ -11,8 +11,8 @@
 
 .modal-content {
     color: white;
-    width: 30rem;
-    height: 40rem;
+    width: 100%;
+    height: 100%;
     align-items: center;
 }
 

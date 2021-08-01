@@ -20,7 +20,6 @@ const CardViewMovie = ({ movie }) => {
           const movieInfo = await res.json();
           setSelectedMovie(movieInfo);
           setModalShow(true);
-          console.log(movieInfo);
         } catch(err) {
           console.log(err);
         }
