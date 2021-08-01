@@ -37,14 +37,14 @@
 .cardPoster {
     position: absolute;
     grid-area: cardPoster;
-    height: 90%;
-    width: auto;
+    width: 90%;
+    height: auto;
     border: solid 1px black;
     margin-bottom: 0.5rem;
 }
 .cardPoster img {
-    height: 100%;
-    width: auto;
+    width: 100%;
+    height: auto;
 }
 
 .cardTitle {

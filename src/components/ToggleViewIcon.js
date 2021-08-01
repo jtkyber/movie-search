@@ -2,7 +2,7 @@ import './ToggleViewIcon.css';
 import { useStoreState, useStoreActions } from 'easy-peasy';
 
 const ToggleViewIcon = () => {
-    const cardView = useStoreState(state => state.cardView);
+    const cardView = useStoreState(state => state.stored.cardView);
     const toggleCardView = useStoreActions(actions => actions.toggleCardView)
 
     return (

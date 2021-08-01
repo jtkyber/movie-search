@@ -6,6 +6,7 @@
 .listViewBlock {
     display: grid;
     width:  85vw;
+    height: 6rem;
     grid-template-columns: .1fr .6fr .1fr .2fr;
     gap: 1rem;
     margin-bottom: 0.5rem;

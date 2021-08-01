@@ -3,21 +3,24 @@ import CardViewMovie from './CardViewMovie';
 import { useStoreState } from 'easy-peasy';
 
 const MovieList = () => {
-    const { cardView, bySearch } = useStoreState(state => ({
-        cardView: state.cardView,
-        bySearch: state.bySearch
+    const { cardView, movieResults } = useStoreState(state => ({
+        cardView: state.stored.cardView,
+        movieResults: state.movieResults
     }));
 
     return (
         <>
             {
-              bySearch.map(movie => {
+            movieResults !== undefined
+            ?
+              movieResults.map(movie => {
                 return(
                     cardView
                     ? <CardViewMovie key={movie.imdbID} movie={movie} />
                     : <ListViewMovie key={movie.imdbID} movie={movie} />
                 )
               })
+              : null
             }
         </>
     )

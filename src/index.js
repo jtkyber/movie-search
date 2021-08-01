@@ -1,14 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { StoreProvider, createStore, persist } from 'easy-peasy';
+import { StoreProvider, createStore } from 'easy-peasy';
 import model from './model';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-const store = createStore(persist(model, {
-    storage: 'localStorage',
-}));
+const store = createStore(model);
 
 ReactDOM.render(
     <StoreProvider store={store}>
