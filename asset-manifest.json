@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/jtkyber/my-app/movie-search/static/css/main.e835b4cd.chunk.css",
+    "main.js": "/jtkyber/my-app/movie-search/static/js/main.15a88b53.chunk.js",
+    "main.js.map": "/jtkyber/my-app/movie-search/static/js/main.15a88b53.chunk.js.map",
+    "runtime-main.js": "/jtkyber/my-app/movie-search/static/js/runtime-main.57b83fbc.js",
+    "runtime-main.js.map": "/jtkyber/my-app/movie-search/static/js/runtime-main.57b83fbc.js.map",
+    "static/css/2.4be38407.chunk.css": "/jtkyber/my-app/movie-search/static/css/2.4be38407.chunk.css",
+    "static/js/2.441b2cb7.chunk.js": "/jtkyber/my-app/movie-search/static/js/2.441b2cb7.chunk.js",
+    "static/js/2.441b2cb7.chunk.js.map": "/jtkyber/my-app/movie-search/static/js/2.441b2cb7.chunk.js.map",
+    "static/js/3.4ed03bc1.chunk.js": "/jtkyber/my-app/movie-search/static/js/3.4ed03bc1.chunk.js",
+    "static/js/3.4ed03bc1.chunk.js.map": "/jtkyber/my-app/movie-search/static/js/3.4ed03bc1.chunk.js.map",
+    "index.html": "/jtkyber/my-app/movie-search/index.html",
+    "static/css/2.4be38407.chunk.css.map": "/jtkyber/my-app/movie-search/static/css/2.4be38407.chunk.css.map",
+    "static/css/main.e835b4cd.chunk.css.map": "/jtkyber/my-app/movie-search/static/css/main.e835b4cd.chunk.css.map",
+    "static/js/2.441b2cb7.chunk.js.LICENSE.txt": "/jtkyber/my-app/movie-search/static/js/2.441b2cb7.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/jtkyber/my-app/movie-search/static/media/LOTR.8d4d72b9.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.57b83fbc.js",
+    "static/css/2.4be38407.chunk.css",
+    "static/js/2.441b2cb7.chunk.js",
+    "static/css/main.e835b4cd.chunk.css",
+    "static/js/main.15a88b53.chunk.js"
+  ]
+}
