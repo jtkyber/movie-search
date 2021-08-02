@@ -3,20 +3,94 @@
     padding-bottom: 3rem;
 }
 
-.listViewBlock {
-    display: grid;
-    width:  85vw;
-    height: 6rem;
-    grid-template-columns: .1fr .6fr .1fr .2fr;
-    gap: 1rem;
-    margin-bottom: 0.5rem;
-    align-items: center;
-    border: 2px solid black;
-    padding: 0.5rem 1rem;
-    transition: 0.2s;
-    cursor: pointer;
-    overflow: hidden;
+@media screen and (orientation: landscape) {
+    .listViewBlock {
+        display: grid;
+        width:  85vw;
+        height: 6rem;
+        grid-template-columns: .1fr 1fr 6rem 5.5rem;
+        gap: 1rem;
+        margin-bottom: 0.5rem;
+        align-items: center;
+        border: 2px solid black;
+        padding: 0.5rem 1rem;
+        transition: 0.2s;
+        cursor: pointer;
+        overflow: hidden;
+    }
+
+    .listViewBlock h5{
+        font-size: 1.2rem;
+    }
+
+    .listType h6 {
+        margin:  0;
+    }
+
+    .listYear h6 {
+        margin:  0;
+    }
 }
+
+@media screen and (orientation: portrait) {
+    .listViewBlock {
+        display: grid;
+        width:  85vw;
+        height: 6rem;
+        grid-template-columns: .1fr 1fr 3.5rem 5rem;
+        gap: 1rem;
+        margin-bottom: 0.5rem;
+        align-items: center;
+        border: 2px solid black;
+        padding: 0.5rem 1rem;
+        transition: 0.2s;
+        cursor: pointer;
+        overflow: hidden;
+    }
+    .listViewBlock h5{
+        font-size: 1rem;
+    }
+
+    .listType h6 {
+        margin:  0;
+    }
+
+    .listYear h6 {
+        margin:  0;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .listViewBlock {
+        display: grid;
+        width:  85vw;
+        height: 6rem;
+        grid-template-columns: .1fr 1fr 2rem 3.5rem;
+        gap: 1rem;
+        margin-bottom: 0.5rem;
+        align-items: center;
+        border: 2px solid black;
+        padding: 0.5rem 1rem;
+        transition: 0.2s;
+        cursor: pointer;
+        overflow: hidden;
+    }
+
+    .listViewBlock h5{
+        font-size: 0.8rem;
+    }
+
+    .listType h6 {
+        margin:  0;
+        font-size: 0.8rem;
+    }
+
+    .listYear h6 {
+        margin:  0;
+        font-size: 0.8rem;
+    }
+}
+
 .listViewBlock:hover {
     box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.3);
 }
@@ -24,12 +98,12 @@
 .quickRemoveList {
     position: absolute;
     right: 0.2rem;
-    margin-top: 0.3rem;
+    margin-top: 3.4rem;
     border-radius: 50%;
     border-color: red;
     color: red;
-    height: 1.8rem;
-    width: 1.8rem;
+    height: 1.6rem;
+    width: 1.6rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -47,6 +121,10 @@
     height: auto;
 }
 
+.listTitle {
+    align-self: center;
+}
+
 .listTitle h5 {
     margin:  0;
 }
@@ -55,15 +133,8 @@
     color:  grey;
 }
 
-.listType h6 {
-    margin:  0;
-}
-
 .listYear {
     justify-self: end;
     color:  grey;
-}
-
-.listYear h6 {
-    margin:  0;
+    white-space: nowrap;
 }

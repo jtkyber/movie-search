@@ -48,7 +48,12 @@ function App() {
   return (
     <div className='appContainer'>
       <header>
-        <div className='header'></div>
+        <div className='header'>
+          <div className='headerItems'>
+            <Button onClick={toggleOnFavoritesPage} variant="outline-secondary" className='favorites'>{onFavoritesPage ? 'Search' : 'Favorites'}</Button>
+            <ToggleViewIcon />
+          </div>
+        </div>
       </header>
       <div className='grid'>
       {
@@ -56,15 +61,11 @@ function App() {
         ?
         <div className='favoritesContainer'>
           <h2 className='favText'>Favorites</h2>
-          <Button onClick={toggleOnFavoritesPage} variant="outline-secondary" className='favorites'>Search</Button>
-          <ToggleViewIcon />
         </div>
         :
         <div className='searchBoxContainer'>
           <input onChange={(e) => setCurrentSearch(e.target.value)} value={currentSearch} className='searchBox' type='text' placeholder='Search for a movie, show, game, etc...' />
           <Button variant="outline-secondary" onClick={findMovies} className='enter'>Enter</Button>
-          <Button onClick={toggleOnFavoritesPage} variant="outline-secondary" className='favorites'>Favorites</Button>
-          <ToggleViewIcon />
         </div>
       }
         <div className='resultContainer'>

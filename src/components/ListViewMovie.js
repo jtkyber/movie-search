@@ -45,12 +45,12 @@ const ListViewMovie = ({ movie }) => {
                 </div>
                 <div className='listYear'>
                     <h6>{movie.Year}</h6>
-                    {
-                        onFavoritesPage
-                        ? <button onClick={() => removeFromFavorites(movie.imdbID)} className='quickRemoveList'>X</button>
-                        : null
-                    }
                 </div>
+                {
+                    onFavoritesPage
+                    ? <button onClick={() => removeFromFavorites(movie.imdbID)} className='quickRemoveList'>X</button>
+                    : null
+                }
             </div>
             <MoreInfo movie={selectedMovie} show={modalShow} onHide={() => setModalShow(false)} />
         </>
