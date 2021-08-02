@@ -37,7 +37,7 @@ header {
   width: 95vw;
   height: 100%;
   display: grid;
-  grid-template-columns: 1.7fr 15rem 1fr 6rem 2rem;
+  grid-template-columns: 1.7fr 20rem 1fr 6rem 2rem;
   grid-template-rows: 1fr 1fr;
   grid-template-areas:
   ". searchBox . favorites toggle"
@@ -50,6 +50,7 @@ header {
 .searchBox {
   grid-area: searchBox;
   border: solid 3px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
   background-color: rgba(255, 255, 255, 0.3);
   height: 2.3rem;
   width: 100%;
@@ -71,24 +72,26 @@ header {
    justify-content: center;
    justify-self: center;
    margin-top: 0.5rem;
+   border: solid 2px #006C85;
+   color: #006C85;
+   opacity: 80%;
+}
+.enter:hover {
+  color: #F8FEFF;
+  border: solid 2px #006C85;
+  background-color: #006C85;
 }
 
 .favorites {
   grid-area: favorites;
-  border: solid 2px rgba(0, 0, 0, 0.7);
+  border: solid 2px rgba(50, 50, 50, 0.7);
   border-radius: 10px;
   width: 5rem;
   height: 1.5rem;
   font-weight: 600;
-  cursor: pointer;
-  background-color: transparent;
-  color: black;
   display: flex;
   align-items: center;
-  transition: 0.1s;
-}
-.favorites:hover {
-  opacity: 0.6;
+  justify-content: center;
 }
 
 .toggleViewIcon {
