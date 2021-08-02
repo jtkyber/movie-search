@@ -119,7 +119,7 @@
     align-items: center;
     background-color: transparent;
     font-weight: 600;
-    opacity: 70%;
+    /*opacity: 70%;*/
 }
 .quickRemoveCard:hover {
     color: white;
