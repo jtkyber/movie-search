@@ -5,8 +5,14 @@ import './ListViewMovie.css';
 
 const ListViewMovie = ({ movie }) => {
     const [modalShow, setModalShow] = useState(false);
-    const selectedMovie = useStoreState(state => state.selectedMovie);
-    const setSelectedMovie = useStoreActions(actions => actions.setSelectedMovie);
+    const { selectedMovie, onFavoritesPage} = useStoreState(state => ({
+        selectedMovie: state.selectedMovie,
+        onFavoritesPage: state.onFavoritesPage
+    }));
+    const { removeFromFavorites, setSelectedMovie} = useStoreActions(actions => ({
+        removeFromFavorites: actions.removeFromFavorites,
+        setSelectedMovie: actions.setSelectedMovie
+    }));
 
     const getMovieInfo = async () => {
         try {
@@ -39,6 +45,11 @@ const ListViewMovie = ({ movie }) => {
                 </div>
                 <div className='listYear'>
                     <h6>{movie.Year}</h6>
+                    {
+                        onFavoritesPage
+                        ? <button onClick={() => removeFromFavorites(movie.imdbID)} className='quickRemoveList'>X</button>
+                        : null
+                    }
                 </div>
             </div>
             <MoreInfo movie={selectedMovie} show={modalShow} onHide={() => setModalShow(false)} />

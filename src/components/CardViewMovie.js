@@ -5,8 +5,14 @@ import './CardViewMovie.css';
 
 const CardViewMovie = ({ movie }) => {
     const [modalShow, setModalShow] = useState(false);
-    const selectedMovie = useStoreState(state => state.selectedMovie);
-    const setSelectedMovie = useStoreActions(actions => actions.setSelectedMovie);
+    const { selectedMovie, onFavoritesPage} = useStoreState(state => ({
+        selectedMovie: state.selectedMovie,
+        onFavoritesPage: state.onFavoritesPage
+    }));
+    const { removeFromFavorites, setSelectedMovie} = useStoreActions(actions => ({
+        removeFromFavorites: actions.removeFromFavorites,
+        setSelectedMovie: actions.setSelectedMovie
+    }));
 
     const getMovieInfo = async () => {
         try {
@@ -28,6 +34,11 @@ const CardViewMovie = ({ movie }) => {
     return (
         <>
             <div onClick={getMovieInfo} className='cardViewBlock'>
+            {
+                onFavoritesPage
+                ? <button onClick={() => removeFromFavorites(movie.imdbID)} className='quickRemoveCard'>X</button>
+                : null
+            }
                 <div className='cardPoster'>
                     <img src={movie.Poster} alt='poster' />
                 </div>

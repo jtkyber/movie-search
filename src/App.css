@@ -47,6 +47,27 @@ header {
   background: linear-gradient(rgba(255, 246, 235, 1), 90%, rgba(255, 246, 235, 0));
 }
 
+.favoritesContainer {
+  position: relative;
+  width: 95vw;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1.7fr 20rem 1fr 6rem 2rem;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+  ". favText . favorites toggle"
+  " . favText . . .";
+  align-items: center;
+  z-index: 10;
+  background: linear-gradient(rgba(255, 246, 235, 1), 90%, rgba(255, 246, 235, 0));
+}
+
+.favText {
+  grid-area: favText;
+  text-align: center;
+  margin: 0;
+}
+
 .searchBox {
   grid-area: searchBox;
   border: solid 3px rgba(0, 0, 0, 0.3);
@@ -72,14 +93,9 @@ header {
    justify-content: center;
    justify-self: center;
    margin-top: 0.5rem;
-   border: solid 2px #006C85;
-   color: #006C85;
+   border-width: 2px;
+   font-weight: 600;
    opacity: 80%;
-}
-.enter:hover {
-  color: #F8FEFF;
-  border: solid 2px #006C85;
-  background-color: #006C85;
 }
 
 .favorites {

@@ -7,8 +7,16 @@ import Button from 'react-bootstrap/Button';
 import './App.css';
 
 function App() {
-  const cardView = useStoreState(state => state.stored.cardView);
-  const setMovieResults = useStoreActions(actions => actions.setMovieResults);
+  const { cardView, onFavoritesPage } = useStoreState(state => ({
+    cardView: state.stored.cardView,
+    onFavoritesPage: state.onFavoritesPage
+  }));
+
+  const { setMovieResults, toggleOnFavoritesPage } = useStoreActions(actions => ({
+    setMovieResults: actions.setMovieResults,
+    toggleOnFavoritesPage: actions.toggleOnFavoritesPage
+  }));
+
   const [currentSearch, setCurrentSearch] = useState('');
 
   const findMovies = async () => {
@@ -43,12 +51,22 @@ function App() {
         <div className='header'></div>
       </header>
       <div className='grid'>
-        <div className='searchBoxContainer'>
-          <input onChange={(e) => setCurrentSearch(e.target.value)} value={currentSearch} className='searchBox' type='text' placeholder='Search for a movie, show, game, etc...' />
-          <Button variant="outline-info" onClick={findMovies} className='enter'>Enter</Button>
-          <Button variant="outline-secondary" className='favorites'>Favorites</Button>
+      {
+        onFavoritesPage
+        ?
+        <div className='favoritesContainer'>
+          <h2 className='favText'>Favorites</h2>
+          <Button onClick={toggleOnFavoritesPage} variant="outline-secondary" className='favorites'>Search</Button>
           <ToggleViewIcon />
         </div>
+        :
+        <div className='searchBoxContainer'>
+          <input onChange={(e) => setCurrentSearch(e.target.value)} value={currentSearch} className='searchBox' type='text' placeholder='Search for a movie, show, game, etc...' />
+          <Button variant="outline-secondary" onClick={findMovies} className='enter'>Enter</Button>
+          <Button onClick={toggleOnFavoritesPage} variant="outline-secondary" className='favorites'>Favorites</Button>
+          <ToggleViewIcon />
+        </div>
+      }
         <div className='resultContainer'>
           <div className= {cardView ? 'cardContainer' : 'listContainer'}>
             <MovieList />

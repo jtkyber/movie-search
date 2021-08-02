@@ -3,17 +3,25 @@ import CardViewMovie from './CardViewMovie';
 import { useStoreState } from 'easy-peasy';
 
 const MovieList = () => {
-    const { cardView, movieResults } = useStoreState(state => ({
+    const { cardView, movieResults, onFavoritesPage, favorites } = useStoreState(state => ({
         cardView: state.stored.cardView,
-        movieResults: state.movieResults
+        movieResults: state.movieResults,
+        onFavoritesPage: state.onFavoritesPage,
+        favorites: state.stored.favorites
     }));
+
+    const resultType = () => {
+        if (onFavoritesPage) {
+            return favorites
+        } else return movieResults
+    }
 
     return (
         <>
             {
-            movieResults !== undefined
+            resultType() !== undefined
             ?
-              movieResults.map(movie => {
+              resultType().map(movie => {
                 return(
                     cardView
                     ? <CardViewMovie key={movie.imdbID} movie={movie} />

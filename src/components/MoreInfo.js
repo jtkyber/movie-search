@@ -13,14 +13,16 @@ const MoreInfo = (props) => {
   const [isFavorite, setIsFavorite] = useState(false);
 
   useEffect(() => {
-    for (let movie in favorites) {
-      console.log('fav id: ' + movie.imdbID + ' | cur id: ' + m.imdbID);
-      if (movie.imdbID === m.imdbID) {
-        return setIsFavorite(true);
+    if (props.show === true)
+    {
+      for (let movie of favorites) {
+        if (m.imdbID === movie.imdbID) {
+          return setIsFavorite(true);
+        }
       }
+      setIsFavorite(false);
     }
-    return setIsFavorite(false);
-  }, [])
+  }, [props.show])
 
   const updateFavorites = () => {
     if(!isFavorite) {

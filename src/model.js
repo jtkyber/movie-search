@@ -15,6 +15,7 @@ const model = {
 
     movieResults: [],
     selectedMovie: {},
+    onFavoritesPage: false,
 
 
 
@@ -59,6 +60,10 @@ const model = {
                 favs.splice(i, 1);
             }
         }
+    }),
+
+    toggleOnFavoritesPage: action(state => {
+        state.onFavoritesPage = !state.onFavoritesPage;
     }),
 }
 

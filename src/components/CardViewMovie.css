@@ -24,14 +24,35 @@
     "cardPoster cardYear";
     padding:  0.5rem;
     overflow: hidden;
-    box-shadow: 8px 8px 20px 1px rgba(0, 0, 0, 0.5);
+    box-shadow: 8px 8px 15px 1px rgba(0, 0, 0, 0.3);
     transition: 0.3s;
     cursor: pointer;
     justify-items: center;
     align-items: center;
 }
 .cardViewBlock:hover {
-    transform: scale(1.05);
+    transform: scale(1.03);
+}
+
+.quickRemoveCard {
+    position: absolute;
+    bottom: 4%;
+    right: 2%;
+    border-radius: 50%;
+    border-color: red;
+    color: red;
+    height: 1.8rem;
+    width: 1.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    font-weight: 600;
+    opacity: 70%;
+}
+.quickRemoveCard:hover {
+    color: white;
+    background-color: red;
 }
 
 .cardPoster {
