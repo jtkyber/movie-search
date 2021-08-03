@@ -154,16 +154,25 @@ header {
   display: flex;
   justify-content: center;
   overflow: scroll;
+  overflow: scroll;
   overflow-x: hidden;
   padding-top: 1rem;
 }
 
-.resultContainer::-webkit-scrollbar {
-  background: transparent;
+@media screen and (min-width: 501px) {
+  .resultContainer::-webkit-scrollbar {
+    background: transparent;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .resultContainer::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 .resultContainer::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(255, 255, 255, 0.4);
   border-radius: 10px;
 }
 
