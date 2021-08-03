@@ -37,7 +37,7 @@ header {
 .headerItems {
   grid-area: headerItems;
   display: grid;
-  grid-template-columns: 6rem 3rem;
+  grid-template-columns: 7rem 3rem;
   justify-items: center;
   align-items: center;
 }
@@ -47,12 +47,13 @@ header {
   background-color: rgba(255, 255, 255, 0.5);
   color: rgba(0, 0, 0, 0.7);
   border-radius: 20px;
-  width: 5rem;
-  height: 1.5rem;
+  width: 6rem;
+  height: 1.7rem;
   font-weight: 600;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-top: 0.5rem;
 }
 .favorites:hover {
   border-color: rgba(255, 255, 255, 0.5);
@@ -111,7 +112,7 @@ header {
   width: 100%;
   max-width: 25rem;
   text-align: center;
-  color: rgba(255, 255, 255, 0.7);;
+  color: rgba(255, 255, 255, 0.7);
 }
 .searchBox:focus {
   outline: none;
@@ -132,6 +133,7 @@ header {
    justify-self: center;
    border-width: 2px;
    font-weight: 600;
+   padding-top: 0.5rem;
 }
 .enter:hover {
   border-color: rgba(255, 255, 255, 0);

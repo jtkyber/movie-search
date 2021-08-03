@@ -12,6 +12,12 @@ code {
     monospace;
 }
 
+@font-face {
+  font-family: appFont;
+  src: url(appFont.ttf);
+}
+
 * {
   margin:  0;
+  font-family: appFont;
 }
