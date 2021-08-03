@@ -76,6 +76,8 @@ function App() {
           </div>
         </div>
       </div>
+      <footer>
+      </footer>
     </div>
   );
 }
