@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/movie-search/static/css/main.918cafda.chunk.css",
+    "main.css": "/movie-search/static/css/main.8235418f.chunk.css",
     "main.js": "/movie-search/static/js/main.970f9c1e.chunk.js",
     "main.js.map": "/movie-search/static/js/main.970f9c1e.chunk.js.map",
     "runtime-main.js": "/movie-search/static/js/runtime-main.aecae1c5.js",
@@ -12,7 +12,7 @@
     "static/js/3.a0698bfb.chunk.js.map": "/movie-search/static/js/3.a0698bfb.chunk.js.map",
     "index.html": "/movie-search/index.html",
     "static/css/2.4be38407.chunk.css.map": "/movie-search/static/css/2.4be38407.chunk.css.map",
-    "static/css/main.918cafda.chunk.css.map": "/movie-search/static/css/main.918cafda.chunk.css.map",
+    "static/css/main.8235418f.chunk.css.map": "/movie-search/static/css/main.8235418f.chunk.css.map",
     "static/js/2.7a55f3a1.chunk.js.LICENSE.txt": "/movie-search/static/js/2.7a55f3a1.chunk.js.LICENSE.txt",
     "static/media/App.css": "/movie-search/static/media/LOTR.8d4d72b9.jpg",
     "static/media/index.css": "/movie-search/static/media/appFont.a2116ef8.ttf"
@@ -21,7 +21,7 @@
     "static/js/runtime-main.aecae1c5.js",
     "static/css/2.4be38407.chunk.css",
     "static/js/2.7a55f3a1.chunk.js",
-    "static/css/main.918cafda.chunk.css",
+    "static/css/main.8235418f.chunk.css",
     "static/js/main.970f9c1e.chunk.js"
   ]
 }
