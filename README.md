@@ -1,5 +1,5 @@
 ## Movie Search
-As the name suggests, Movie Search is a web application that allows the user to search for movies, tv shows, and even games. After a title is submitted, all of the results that match the entry will appear below with the following information available:
+As the name suggests, Movie Search is a web application that allows a user to search for movies, tv shows, and even games. After a title is submitted, all of the results that match the entry will appear below with the following information available:
 * Poster
 * Title
 * Type (movie, series, game, etc.)
