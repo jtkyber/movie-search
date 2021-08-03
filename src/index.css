@@ -14,10 +14,10 @@ code {
 
 @font-face {
   font-family: appFont;
-  src: url(appFont.ttf) format('truetype');
+  src: url(appFont.ttf);
 }
 
 * {
   margin:  0;
-  font-family: appFont;
+  font-family: appFont, 'Roboto';
 }
