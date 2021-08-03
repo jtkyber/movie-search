@@ -73,10 +73,10 @@ const MoreInfo = (props) => {
                 <b>Awards:</b> {m.Awards}
               </p>
               <p>
-                <b>BoxOffice:</b> {m.BoxOffice}
+                <b>Box Office:</b> {m.BoxOffice}
               </p>
               <p>
-                <b>Language:</b> {m.Language}
+                <b>Language(s):</b> {m.Language}
               </p>
               <p>
                 <b>Rated:</b> {m.Rated}
