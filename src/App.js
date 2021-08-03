@@ -50,24 +50,26 @@ function App() {
       <header>
         <div className='header'>
           <div className='headerItems'>
-            <Button onClick={toggleOnFavoritesPage} variant="outline-secondary" className='favorites'>{onFavoritesPage ? 'Search' : 'Favorites'}</Button>
+            <Button onClick={toggleOnFavoritesPage} variant="outline-secondary" className='favorites'>{onFavoritesPage ? 'Back' : 'Favorites'}</Button>
             <ToggleViewIcon />
+          </div>
+          <div className='searchAndFavorites'>
+            {
+            onFavoritesPage
+            ?
+            <div className='favoritesContainer'>
+              <h2 className='favText'>Favorites</h2>
+            </div>
+            :
+            <div className='searchBoxContainer'>
+              <input onChange={(e) => setCurrentSearch(e.target.value)} value={currentSearch} className='searchBox' type='text' placeholder='Search for a movie, show, game, etc...' />
+              <Button variant="outline-secondary" onClick={findMovies} className='enter'>Search</Button>
+            </div>
+            }
           </div>
         </div>
       </header>
       <div className='grid'>
-      {
-        onFavoritesPage
-        ?
-        <div className='favoritesContainer'>
-          <h2 className='favText'>Favorites</h2>
-        </div>
-        :
-        <div className='searchBoxContainer'>
-          <input onChange={(e) => setCurrentSearch(e.target.value)} value={currentSearch} className='searchBox' type='text' placeholder='Search for a movie, show, game, etc...' />
-          <Button variant="outline-secondary" onClick={findMovies} className='enter'>Enter</Button>
-        </div>
-      }
         <div className='resultContainer'>
           <div className= {cardView ? 'cardContainer' : 'listContainer'}>
             <MovieList />

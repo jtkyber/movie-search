@@ -7,7 +7,7 @@
         justify-items: center;
         justify-content: center;
         gap: 2rem;
-        padding-bottom: 3rem;
+        padding-bottom: 40vh;
     }
     .cardViewBlock {
         position: relative;
@@ -110,8 +110,8 @@
     bottom: 4%;
     right: 2%;
     border-radius: 50%;
-    border-color: red;
-    color: red;
+    border-color: rgba(200, 0, 0, 1);
+    color: rgba(200, 0, 0, 1);
     height: 1.6rem;
     width: 1.6rem;
     display: flex;
@@ -119,11 +119,10 @@
     align-items: center;
     background-color: transparent;
     font-weight: 600;
-    /*opacity: 70%;*/
 }
 .quickRemoveCard:hover {
     color: white;
-    background-color: red;
+    background-color: rgba(200, 0, 0, 1);
 }
 
 .cardPoster {
@@ -152,6 +151,10 @@
     height: 2rem;
     color: grey;
     align-self: end;
+}
+
+.cardType h6 {
+    text-transform: capitalize;
 }
 
 .cardYear {

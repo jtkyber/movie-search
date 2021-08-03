@@ -1,6 +1,6 @@
 .listContainer {
     position: absolute;
-    padding-bottom: 3rem;
+    padding-bottom: 40vh;
 }
 
 @media screen and (orientation: landscape) {
@@ -131,6 +131,10 @@
 
 .listType {
     color:  grey;
+}
+
+.listType h6 {
+    text-transform: capitalize;
 }
 
 .listYear {
