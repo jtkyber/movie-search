@@ -3,23 +3,32 @@
     padding-bottom: 40vh;
 }
 
+.listViewBlock {
+    display: grid;
+    width:  85vw;
+    height: 6rem;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+    align-items: center;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    padding: 0.5rem 1rem;
+    transition: 0.2s;
+    cursor: pointer;
+    overflow: hidden;
+}
+.listViewBlock:hover {
+    box-shadow: 0 0 12px 4px rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.7);
+}
+
 @media screen and (orientation: landscape) {
     .listViewBlock {
-        display: grid;
-        width:  85vw;
-        height: 6rem;
         grid-template-columns: .1fr 1fr 6rem 5.5rem;
-        gap: 1rem;
-        margin-bottom: 0.5rem;
-        align-items: center;
-        border: 2px solid black;
-        padding: 0.5rem 1rem;
-        transition: 0.2s;
-        cursor: pointer;
-        overflow: hidden;
     }
 
-    .listViewBlock h5{
+    .listTitle h5 {
+        margin:  0;
+        color: rgba(255, 255, 255, 0.7);
         font-size: 1.2rem;
     }
 
@@ -34,20 +43,12 @@
 
 @media screen and (orientation: portrait) {
     .listViewBlock {
-        display: grid;
-        width:  85vw;
-        height: 6rem;
         grid-template-columns: .1fr 1fr 3.5rem 5rem;
-        gap: 1rem;
-        margin-bottom: 0.5rem;
-        align-items: center;
-        border: 2px solid black;
-        padding: 0.5rem 1rem;
-        transition: 0.2s;
-        cursor: pointer;
-        overflow: hidden;
     }
-    .listViewBlock h5{
+
+    .listTitle h5 {
+        margin:  0;
+        color: rgba(255, 255, 255, 0.7);
         font-size: 1rem;
     }
 
@@ -60,23 +61,14 @@
     }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
     .listViewBlock {
-        display: grid;
-        width:  85vw;
-        height: 6rem;
         grid-template-columns: .1fr 1fr 2rem 3.5rem;
-        gap: 1rem;
-        margin-bottom: 0.5rem;
-        align-items: center;
-        border: 2px solid black;
-        padding: 0.5rem 1rem;
-        transition: 0.2s;
-        cursor: pointer;
-        overflow: hidden;
     }
 
-    .listViewBlock h5{
+    .listTitle h5 {
+        margin:  0;
+        color: rgba(255, 255, 255, 0.7);
         font-size: 0.8rem;
     }
 
@@ -91,17 +83,13 @@
     }
 }
 
-.listViewBlock:hover {
-    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.3);
-}
-
 .quickRemoveList {
     position: absolute;
-    right: 0.2rem;
+    right: 0.3rem;
     margin-top: 3.4rem;
     border-radius: 50%;
-    border-color: red;
-    color: red;
+    border-color: rgba(200, 0, 0, 0.8);
+    color: rgba(175, 0, 0, 0.8);
     height: 1.6rem;
     width: 1.6rem;
     display: flex;
@@ -109,28 +97,25 @@
     align-items: center;
     background-color: transparent;
     font-weight: 600;
-    /*opacity: 70%;*/
 }
 .quickRemoveList:hover {
-    color: white;
-    background-color: red;
+    color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(200, 0, 0, 0.8);
 }
 
 .listPoster img {
     width: 3rem;
     height: auto;
+    opacity: 0.8;
+    border: solid 2px rgba(255, 255, 255, 0.6);
 }
 
 .listTitle {
     align-self: center;
 }
 
-.listTitle h5 {
-    margin:  0;
-}
-
 .listType {
-    color:  grey;
+    color: grey;
 }
 
 .listType h6 {

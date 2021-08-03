@@ -15,7 +15,7 @@
 }
 
 .block {
-    border: solid 1px black;
+    border: solid 1px rgba(255, 255, 255, 0.5);;
 }
 
 .listViewIcon {
@@ -35,10 +35,10 @@
 }
 
 .dot {
-    border: solid 1px black;
+    border: solid 1px rgba(255, 255, 255, 0.5);
 }
 
 .line {
-    border: solid 1px black;
+    border: solid 1px rgba(255, 255, 255, 0.5);
 }
 

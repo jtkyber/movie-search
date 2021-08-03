@@ -62,7 +62,7 @@ function App() {
             </div>
             :
             <div className='searchBoxContainer'>
-              <input onChange={(e) => setCurrentSearch(e.target.value)} value={currentSearch} className='searchBox' type='text' placeholder='Search for a movie, show, game, etc...' />
+              <input onChange={(e) => setCurrentSearch(e.target.value)} value={currentSearch} className='searchBox' type='text' placeholder='Enter a movie' />
               <Button variant="outline-secondary" onClick={findMovies} className='enter'>Search</Button>
             </div>
             }
