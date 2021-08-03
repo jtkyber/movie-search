@@ -4,6 +4,7 @@ As the name suggests, Movie Search is a web application that allows the user to 
 * Title
 * Type (movie, series, game, etc.)
 * Production year/range
+
 Theses results can be toggled between a list view and a card view via the icon in the upper right hand corner. Upon selection of a result, a pop-up will appear in the center of the screen, displaying the following content related to the selection:
 * Title
 * Type (movie, series, game, etc.)
