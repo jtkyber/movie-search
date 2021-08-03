@@ -7,7 +7,7 @@ body {
   width: 100vw;
   height: 100vh;
   display: grid;
-  grid-template-rows: 8rem 1fr 3rem;
+  grid-template-rows: 8.5rem 1fr 3rem;
 }
 
 header {
@@ -134,6 +134,7 @@ header {
    border-width: 2px;
    font-weight: 600;
    padding-top: 0.6rem;
+   margin-bottom: 1rem;
 }
 .enter:hover {
   border-color: rgba(255, 255, 255, 0);

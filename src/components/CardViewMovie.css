@@ -60,6 +60,7 @@
     align-items: center;
     background-color: transparent;
     font-weight: 600;
+    padding-top: 0.3rem;
 }
 .quickRemoveCard:hover {
     color: rgba(255, 255, 255, 0.6);;
