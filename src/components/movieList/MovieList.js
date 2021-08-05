@@ -1,5 +1,5 @@
-import ListViewMovie from './ListViewMovie';
-import CardViewMovie from './CardViewMovie';
+import ListViewMovie from '../listViewMovie/ListViewMovie';
+import CardViewMovie from '../cardViewMovie/CardViewMovie';
 import { useStoreState } from 'easy-peasy';
 
 const MovieList = () => {

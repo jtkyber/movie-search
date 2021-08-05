@@ -1,6 +1,6 @@
 import { useStoreState, useStoreActions } from 'easy-peasy';
-import MovieList from './components/MovieList';
-import ToggleViewIcon from './components/ToggleViewIcon';
+import MovieList from './components/movieList/MovieList';
+import ToggleViewIcon from './components/toggleViewIcon/ToggleViewIcon';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
 import './App.css';

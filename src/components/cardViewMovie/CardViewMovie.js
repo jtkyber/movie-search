@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useStoreState, useStoreActions } from 'easy-peasy';
-import MoreInfo from './MoreInfo';
+import MoreInfo from '../moreInfo/MoreInfo';
 import './CardViewMovie.css';
 
 const CardViewMovie = ({ movie }) => {
