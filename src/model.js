@@ -13,6 +13,7 @@ const model = {
         }
     ),
 
+    currentSearch: '',
     movieResults: [],
     selectedMovie: {},
     onFavoritesPage: false,
@@ -20,6 +21,10 @@ const model = {
 
 
     // Actions
+
+    setCurrentSearch: action((state, input) => {
+        state.currentSearch = input;
+    }),
 
     toggleCardView: action(state => {
         state.stored.cardView = !state.stored.cardView;

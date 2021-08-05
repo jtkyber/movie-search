@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { useStoreState, useStoreActions } from 'easy-peasy';
 import MovieList from './components/MovieList';
 import ToggleViewIcon from './components/ToggleViewIcon';
@@ -7,17 +6,17 @@ import Button from 'react-bootstrap/Button';
 import './App.css';
 
 function App() {
-  const { cardView, onFavoritesPage } = useStoreState(state => ({
+  const { cardView, onFavoritesPage, currentSearch } = useStoreState(state => ({
     cardView: state.stored.cardView,
-    onFavoritesPage: state.onFavoritesPage
+    onFavoritesPage: state.onFavoritesPage,
+    currentSearch: state.currentSearch
   }));
 
-  const { setMovieResults, toggleOnFavoritesPage } = useStoreActions(actions => ({
+  const { setMovieResults, toggleOnFavoritesPage, setCurrentSearch } = useStoreActions(actions => ({
     setMovieResults: actions.setMovieResults,
-    toggleOnFavoritesPage: actions.toggleOnFavoritesPage
+    toggleOnFavoritesPage: actions.toggleOnFavoritesPage,
+    setCurrentSearch: actions.setCurrentSearch
   }));
-
-  const [currentSearch, setCurrentSearch] = useState('');
 
   const findMovies = async () => {
     if (currentSearch.length) {
