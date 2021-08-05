@@ -10,6 +10,8 @@ const MovieList = () => {
         favorites: state.stored.favorites
     }));
 
+    // Choose which movie array to use based on whether on search page or favorites page
+
     const resultType = () => {
         if (onFavoritesPage) {
             return favorites
@@ -21,6 +23,8 @@ const MovieList = () => {
             {
             resultType() !== undefined
             ?
+                // Display individual movie components
+                // Choose between card view component or list view component based on 'cardView' state variable
               resultType().map(movie => {
                 return(
                     cardView

@@ -4,6 +4,7 @@ import MoreInfo from './MoreInfo';
 import './CardViewMovie.css';
 
 const CardViewMovie = ({ movie }) => {
+    // Modal doesn't working correctly when 'modalShow' is in easy-peasy
     const [modalShow, setModalShow] = useState(false);
     const { selectedMovie, onFavoritesPage} = useStoreState(state => ({
         selectedMovie: state.selectedMovie,
@@ -13,6 +14,10 @@ const CardViewMovie = ({ movie }) => {
         removeFromFavorites: actions.removeFromFavorites,
         setSelectedMovie: actions.setSelectedMovie
     }));
+
+    // Fetch detailed info for a specific result
+    // Set the 'selectedMovie' state variable to the response
+    // Set the 'modalShow' state variable to true
 
     const getMovieInfo = async () => {
         try {
@@ -34,11 +39,6 @@ const CardViewMovie = ({ movie }) => {
     return (
         <>
             <div onClick={getMovieInfo} className='cardViewBlock'>
-            {
-                onFavoritesPage
-                ? <button onClick={() => removeFromFavorites(movie.imdbID)} className='quickRemoveCard'>X</button>
-                : null
-            }
                 <div className='cardPoster'>
                     <img src={movie.Poster} alt='poster' />
                 </div>
@@ -51,7 +51,15 @@ const CardViewMovie = ({ movie }) => {
                 <div className='cardYear'>
                     <h6>{movie.Year}</h6>
                 </div>
+                {
+                    // Add a quick remove button to each result if on favorites page
+                    // On click, remove result from 'favorites' state variable
+                    onFavoritesPage
+                    ? <button onClick={() => removeFromFavorites(movie.imdbID)} className='quickRemoveCard'>X</button>
+                    : null
+                }
             </div>
+            {/* Bootstrap modal component */}
             <MoreInfo movie={selectedMovie} show={modalShow} onHide={() => setModalShow(false)} />
         </>
     )

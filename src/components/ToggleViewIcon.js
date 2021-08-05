@@ -5,6 +5,9 @@ const ToggleViewIcon = () => {
     const cardView = useStoreState(state => state.stored.cardView);
     const toggleCardView = useStoreActions(actions => actions.toggleCardView)
 
+    // Choose icon configuration based on 'cardView' state variable
+    // Toggle between card view and list view when icon is clicked
+
     return (
         cardView === false
         ?

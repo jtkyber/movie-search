@@ -17,6 +17,7 @@ const model = {
     movieResults: [],
     selectedMovie: {},
     onFavoritesPage: false,
+    isFavorite: false,
 
 
 
@@ -70,6 +71,10 @@ const model = {
     toggleOnFavoritesPage: action(state => {
         state.onFavoritesPage = !state.onFavoritesPage;
     }),
+
+    setIsFavorite: action((state, input) => {
+        state.isFavorite = input;
+    })
 }
 
 export default model;

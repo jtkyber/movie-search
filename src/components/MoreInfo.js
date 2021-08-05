@@ -1,16 +1,22 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { useStoreState, useStoreActions } from 'easy-peasy';
 import { Modal, Button } from 'react-bootstrap';
 import './MoreInfo.css';
 
 const MoreInfo = (props) => {
   const m = props.movie;
-  const favorites = useStoreState(state => state.stored.favorites);
-  const {addToFavorites, removeFromFavorites} = useStoreActions(actions => ({
-    addToFavorites: actions.addToFavorites,
-    removeFromFavorites: actions.removeFromFavorites
+  const { favorites, isFavorite } = useStoreState(state => ({
+    favorites: state.stored.favorites,
+    isFavorite: state.isFavorite
   }));
-  const [isFavorite, setIsFavorite] = useState(false);
+  const {addToFavorites, removeFromFavorites, setIsFavorite} = useStoreActions(actions => ({
+    addToFavorites: actions.addToFavorites,
+    removeFromFavorites: actions.removeFromFavorites,
+    setIsFavorite: actions.setIsFavorite
+  }));
+
+  // Whenever modal is shown, check if that result is inside 'favorites' state variable
+  // Set the 'isFavorite' state variable
 
   useEffect(() => {
     if (props.show === true)
@@ -24,6 +30,9 @@ const MoreInfo = (props) => {
     }
   }, [props.show])
 
+  // Add (only necessary keys and values) or remove result to/from favorites based on 'isFavorite' state variable
+  // Update 'setIsFavorite' state variable
+
   const updateFavorites = () => {
     if(!isFavorite) {
       addToFavorites({poster: m.Poster, title: m.Title, type: m.Type, year: m.Year, imdbID: m.imdbID})
@@ -35,6 +44,7 @@ const MoreInfo = (props) => {
   }
 
   return (
+      //Bootstrap modal
       <Modal
         {...props}
         size="lg"
@@ -87,6 +97,7 @@ const MoreInfo = (props) => {
             </div>
           </Modal.Body>
           <Modal.Footer>
+            {/* Set btn appearance based on 'isFavorite' state variable. Add/remove from favorites on click */}
             <Button
               variant={!isFavorite ? "success" :  "danger"}
               onClick={updateFavorites}

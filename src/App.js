@@ -18,6 +18,11 @@ function App() {
     setCurrentSearch: actions.setCurrentSearch
   }));
 
+  // If search bar is not empty:
+  // Reset the current search
+  // Fetch matching results (based on title)
+  // Set the 'movieResults' state variable to the response
+
   const findMovies = async () => {
     if (currentSearch.length) {
       setCurrentSearch('');
@@ -37,6 +42,8 @@ function App() {
     }
   }
 
+  // Bind enter key to the search button
+
   document.addEventListener("keydown", (e) => {
     if (e.keyCode === 13) {
       e.preventDefault();
@@ -49,10 +56,12 @@ function App() {
       <header>
         <div className='header'>
           <div className='headerItems'>
+            {/* Toggle 'onFavoritesPage' state variable between true and false. Change btn text based on state' */}
             <Button onClick={toggleOnFavoritesPage} variant="outline-secondary" className='favorites'>{onFavoritesPage ? 'Back' : 'Favorites'}</Button>
             <ToggleViewIcon />
           </div>
           <div className='searchAndFavorites'>
+            {/* Either show 'Favorites' text or the search section depending on 'onFavoritesPage' state variable */}
             {
             onFavoritesPage
             ?
@@ -61,6 +70,7 @@ function App() {
             </div>
             :
             <div className='searchBoxContainer'>
+              {/* Set 'currentSearch' state variable with input value */}
               <input onChange={(e) => setCurrentSearch(e.target.value)} value={currentSearch} className='searchBox' type='text' placeholder='Enter a movie' />
               <Button variant="outline-secondary" onClick={findMovies} className='enter'>Search</Button>
             </div>
@@ -70,6 +80,7 @@ function App() {
       </header>
       <div className='grid'>
         <div className='resultContainer'>
+          {/* Choose results layout based on 'cardView' state variable */}
           <div className= {cardView ? 'cardContainer' : 'listContainer'}>
             <MovieList />
           </div>

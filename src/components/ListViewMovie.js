@@ -4,6 +4,7 @@ import MoreInfo from './MoreInfo';
 import './ListViewMovie.css';
 
 const ListViewMovie = ({ movie }) => {
+    // Modal doesn't working correctly when 'modalShow' is in easy-peasy
     const [modalShow, setModalShow] = useState(false);
     const { selectedMovie, onFavoritesPage} = useStoreState(state => ({
         selectedMovie: state.selectedMovie,
@@ -13,6 +14,10 @@ const ListViewMovie = ({ movie }) => {
         removeFromFavorites: actions.removeFromFavorites,
         setSelectedMovie: actions.setSelectedMovie
     }));
+
+    // Fetch detailed info for a specific result
+    // Set the 'selectedMovie' state variable to the response
+    // Set the 'modalShow' state variable to true
 
     const getMovieInfo = async () => {
         try {
@@ -47,11 +52,14 @@ const ListViewMovie = ({ movie }) => {
                     <h6>{movie.Year}</h6>
                 </div>
                 {
+                    // Add a quick remove button to each result if on favorites page
+                    // On click, remove result from 'favorites' state variable
                     onFavoritesPage
                     ? <button onClick={() => removeFromFavorites(movie.imdbID)} className='quickRemoveList'>X</button>
                     : null
                 }
             </div>
+            {/* Bootstrap modal component */}
             <MoreInfo movie={selectedMovie} show={modalShow} onHide={() => setModalShow(false)} />
         </>
     )
