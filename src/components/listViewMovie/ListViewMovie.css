@@ -21,6 +21,31 @@
     border-color: rgba(255, 255, 255, 0.7);
 }
 
+.listPoster img {
+    width: 3rem;
+    height: auto;
+    opacity: 0.8;
+    border: solid 2px rgba(255, 255, 255, 0.6);
+}
+
+.listTitle {
+    align-self: center;
+}
+
+.listType {
+    color: grey;
+}
+
+.listType h6 {
+    text-transform: capitalize;
+}
+
+.listYear {
+    justify-self: end;
+    color:  grey;
+    white-space: nowrap;
+}
+
 @media screen and (orientation: landscape) {
     .listViewBlock {
         grid-template-columns: .1fr 1fr 6rem 5.5rem;
@@ -61,7 +86,7 @@
     }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (min-width: 401px) and (max-width: 500px) {
     .listViewBlock {
         grid-template-columns: .1fr 1fr 2rem 3.5rem;
     }
@@ -80,6 +105,33 @@
     .listYear h6 {
         margin:  0;
         font-size: 0.8rem;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .listViewBlock {
+        grid-template-columns: .1fr 1fr 2rem 3.5rem;
+        padding: 0.3rem 0.5rem;
+    }
+
+    .listPoster img {
+        width: 2.5rem;
+    }
+
+    .listTitle h5 {
+        margin:  0;
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.7rem;
+    }
+
+    .listType h6 {
+        margin:  0;
+        font-size: 0.7rem;
+    }
+
+    .listYear h6 {
+        margin:  0;
+        font-size: 0.7rem;
     }
 }
 
@@ -102,29 +154,4 @@
 .quickRemoveList:hover {
     color: rgba(255, 255, 255, 0.6);
     background-color: rgba(200, 0, 0, 0.8);
-}
-
-.listPoster img {
-    width: 3rem;
-    height: auto;
-    opacity: 0.8;
-    border: solid 2px rgba(255, 255, 255, 0.6);
-}
-
-.listTitle {
-    align-self: center;
-}
-
-.listType {
-    color: grey;
-}
-
-.listType h6 {
-    text-transform: capitalize;
-}
-
-.listYear {
-    justify-self: end;
-    color:  grey;
-    white-space: nowrap;
 }
