@@ -108,9 +108,36 @@
     }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (min-width: 331px) and (max-width: 400px) {
     .listViewBlock {
         grid-template-columns: .1fr 1fr 2rem 3.5rem;
+        padding: 0.3rem 0.5rem;
+    }
+
+    .listPoster img {
+        width: 2.5rem;
+    }
+
+    .listTitle h5 {
+        margin:  0;
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.7rem;
+    }
+
+    .listType h6 {
+        margin:  0;
+        font-size: 0.7rem;
+    }
+
+    .listYear h6 {
+        margin:  0;
+        font-size: 0.7rem;
+    }
+}
+
+@media screen and (max-width: 330px) {
+    .listViewBlock {
+        grid-template-columns: .1fr 1fr 2rem 2.5rem;
         padding: 0.3rem 0.5rem;
     }
 
