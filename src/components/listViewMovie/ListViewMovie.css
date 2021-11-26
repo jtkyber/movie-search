@@ -4,6 +4,7 @@
 }
 
 .listViewBlock {
+    position: relative;
     display: grid;
     width:  85vw;
     height: 6rem;
@@ -181,4 +182,12 @@
 .quickRemoveList:hover {
     color: rgba(255, 255, 255, 0.6);
     background-color: rgba(200, 0, 0, 0.8);
+}
+
+.listFavIcon {
+    position: absolute;
+    color: gold;
+    bottom: 0.5rem;
+    right: 0.5rem;
+    height: 1rem;
 }

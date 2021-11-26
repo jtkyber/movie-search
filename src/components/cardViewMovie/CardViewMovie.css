@@ -126,3 +126,11 @@
     color: grey;
     align-self: start;
 }
+
+.cardFavIcon {
+    position: absolute;
+    color: gold;
+    bottom: 1rem;
+    right: 0.5rem;
+    height: 0.5rem;
+}

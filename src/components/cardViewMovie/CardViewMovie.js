@@ -4,11 +4,12 @@ import MoreInfo from '../moreInfo/MoreInfo';
 import './CardViewMovie.css';
 
 const CardViewMovie = ({ movie }) => {
-    // Modal doesn't working correctly when 'modalShow' is in easy-peasy
+    // Modal doesn't work correctly when 'modalShow' is in easy-peasy
     const [modalShow, setModalShow] = useState(false);
-    const { selectedMovie, onFavoritesPage} = useStoreState(state => ({
+    const { selectedMovie, onFavoritesPage, favorites} = useStoreState(state => ({
         selectedMovie: state.selectedMovie,
-        onFavoritesPage: state.onFavoritesPage
+        onFavoritesPage: state.onFavoritesPage,
+        favorites: state.stored.favorites
     }));
     const { removeFromFavorites, setSelectedMovie} = useStoreActions(actions => ({
         removeFromFavorites: actions.removeFromFavorites,
@@ -36,6 +37,15 @@ const CardViewMovie = ({ movie }) => {
         }
       }
 
+    const isOnFavoritesList = () => {
+        for (let fav of favorites) {
+            if (movie.imdbID === fav.imdbID) {
+              return true;
+            }
+        }
+        return false;
+    }
+
     return (
         <>
             <div onClick={getMovieInfo} className='cardViewBlock'>
@@ -50,6 +60,9 @@ const CardViewMovie = ({ movie }) => {
                 </div>
                 <div className='cardYear'>
                     <h6>{movie.Year}</h6>
+                </div>
+                <div className='cardFavIcon'>
+                    <h1>{isOnFavoritesList() && !onFavoritesPage ? '*' : null}</h1>
                 </div>
                 {
                     // Add a quick remove button to each result if on favorites page
