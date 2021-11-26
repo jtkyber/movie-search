@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useStoreState, useStoreActions } from 'easy-peasy';
 import MovieList from './components/movieList/MovieList';
 import ToggleViewIcon from './components/toggleViewIcon/ToggleViewIcon';
@@ -6,10 +7,11 @@ import Button from 'react-bootstrap/Button';
 import './App.css';
 
 function App() {
-  const { cardView, onFavoritesPage, currentSearch } = useStoreState(state => ({
+  const { cardView, onFavoritesPage, currentSearch, favorites } = useStoreState(state => ({
     cardView: state.stored.cardView,
     onFavoritesPage: state.onFavoritesPage,
-    currentSearch: state.currentSearch
+    currentSearch: state.currentSearch,
+    favorites: state.stored.favorites
   }));
 
   const { setMovieResults, toggleOnFavoritesPage, setCurrentSearch } = useStoreActions(actions => ({
@@ -17,6 +19,22 @@ function App() {
     toggleOnFavoritesPage: actions.toggleOnFavoritesPage,
     setCurrentSearch: actions.setCurrentSearch
   }));
+
+  useEffect(() => {
+    console.log('test');
+    const fav = document.querySelector('.favorites');
+    if (!onFavoritesPage) {
+      fav.style.setProperty("--favCount", `"${favorites.length}"`);
+    }
+  }, [favorites])
+
+  useEffect(() => {
+    console.log('test');
+    const fav = document.querySelector('.favorites');
+    if (!onFavoritesPage) {
+      fav.style.setProperty("--favCount", `"${favorites.length}"`);
+    }
+  }, [onFavoritesPage])
 
   // If search bar is not empty:
   // Reset the current search
@@ -57,7 +75,7 @@ function App() {
         <div className='header'>
           <div className='headerItems'>
             {/* Toggle 'onFavoritesPage' state variable between true and false. Change btn text based on state' */}
-            <Button onClick={toggleOnFavoritesPage} variant="outline-secondary" className='favorites'>{onFavoritesPage ? 'Back' : 'Favorites'}</Button>
+            <Button onClick={toggleOnFavoritesPage} variant="outline-secondary" className={onFavoritesPage ? 'back' : 'favorites'}>{onFavoritesPage ? 'Back' : 'Favorites'}</Button>
             <ToggleViewIcon />
           </div>
           <div className='searchAndFavorites'>
