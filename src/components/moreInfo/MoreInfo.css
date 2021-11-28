@@ -56,6 +56,9 @@
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 10px;
 }
+.modal-body::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.4);
+}
 
 .modalBody {
     width: 100%;

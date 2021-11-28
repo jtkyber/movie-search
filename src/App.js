@@ -21,7 +21,6 @@ function App() {
   }));
 
   useEffect(() => {
-    console.log('test');
     const fav = document.querySelector('.favorites');
     if (!onFavoritesPage) {
       fav.style.setProperty("--favCount", `"${favorites.length}"`);
@@ -29,7 +28,6 @@ function App() {
   }, [favorites])
 
   useEffect(() => {
-    console.log('test');
     const fav = document.querySelector('.favorites');
     if (!onFavoritesPage) {
       fav.style.setProperty("--favCount", `"${favorites.length}"`);
